@@ -1,0 +1,76 @@
+Customer detail
+    -Customer id(cid)(pk)
+    -Driving license
+    -first name
+    -middle name
+    -last name
+    -contact
+    -email
+    -customer address
+    
+Car detail
+    -car id(pk)
+    -model name
+    -purchase year
+    -car category id(fk)
+    -availibility
+    -location id(fk)
+
+Car category
+    -car category id(pk)
+    -no. of seats
+    -luggage capacity
+    -cost per hour
+    -late fee per hour
+    -fuel type
+    -kms drove
+    -transmission
+
+
+customer location
+    -customer location id(pk)
+    -street
+    -landmark
+    -city
+    -state
+    -zip code
+
+car location
+    -car location id(pk)
+    -street
+    -landmark
+    -city
+    -state
+    -zip code
+    
+Booking details
+    -booking id(pk)
+    -car id(fk)
+    -customer id(fk)
+    -from DD:HH (date, hour)
+    -to DD:HH (date, hour)
+    -pickup location(customer location id)(fk)
+    -drop location(customer location id)(fk)
+    -amount per hour
+    -status(booked/available)
+    -insurance id(fk)
+    -discount id(fk)
+    -deposit
+
+Billing details
+    -bill id
+    -booking id
+    -bill date
+    -bill status(paid/pending)
+    -tax amount
+    -discount amount
+    -total late fees
+    -total amount
+    -deposit
+
+Discount details
+    -
+    
+
+
+
