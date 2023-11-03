@@ -1,0 +1,42 @@
+		Scope ........... done
+
+		to do
+
+		workflow diagram
+
+			-registeration
+			-
+
+		use case diagram
+
+			-admin/owner (deleted)
+				
+				
+			-customers/users   (as well as for admin)
+
+				-register
+				-login
+				-edit profile
+				-udpate password
+				-add car
+				-car details / UI
+				-search / sorting cars
+				-booking / reservation
+				-bill payment
+				-cancel booking
+				-print 
+				-logout
+				-
+			
+
+		er diagram
+
+		purpose
+
+		technologies used in project
+
+		UI draw on paper or pencil s/w
+
+		database design - diagram
+
+
