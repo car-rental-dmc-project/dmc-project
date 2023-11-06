@@ -1,0 +1,42 @@
+# For User:-
+
+      	        * Open Website of car rental System
+		* registration/Login
+		* All car details will be available on the screen
+  		* You can Sort cars as per requirment
+                       like:sort by brand name,Sedan,hatchback,SUV,XUV,No of seat etc.
+		* car details will be available on the page like: regi date,Fuel Type,total Km no of Seat
+		* show car as per the current location(City name can be change)
+		* in every car detail we can add Car Demo videos for ref
+		* clicking the the car you can choose date as per requirment
+		* one click Booking will be available(Booking Process will not so lengthy)
+		* while booking ,In Payment Section option will Provide like, Wallet,Online, Cash(When Delivered)
+		* Feeedback
+		* Logout 
+
+
+
+
+# In the Customer Profile :-
+      
+               * Profile e.g. Personal Details
+               * Wallet
+               * Booking History
+               * Add/delete to cart for future reference
+               * Customer can change Mobile number,Password and Some other Personal info.
+               
+               
+    
+    
+ 
+# in Admin/Owner:-
+  
+     * Admin/Owner can Add/delete/Modifed Cars.
+     * If admin then he can see all the Past Booking as per date,car name (sorting).
+            
+            
+            
+            
+            ER daigram(database design)
+            UI design
+            database daigram
