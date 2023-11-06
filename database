@@ -1,3 +1,12 @@
+
+
+Login Details
+    -Email id
+    -Username
+    -Password
+    -Q&A for forget password
+
+
 Customer detail
     -Customer id(cid)(pk)
     -Driving license

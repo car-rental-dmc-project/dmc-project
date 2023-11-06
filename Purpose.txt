@@ -1,0 +1,24 @@
+A car rental system serves several important purposes, primarily for the convenience 
+    of customers who need temporary access to a vehicle. The main purposes of a car 
+    rental system are as follows:
+
+1. Providing Temporary Transportation: Car rental systems allow individuals and 
+    businesses to rent vehicles for a specified period, typically on a hourly, daily, 
+    weekly, or monthly basis.
+
+2. Flexibility: Car rental systems offer flexibility in terms of vehicle selection 
+    and rental duration. Customers can choose from a variety of vehicle types (e.g., 
+    economy cars, SUVs, luxury cars) to suit their specific needs. They can also rent 
+    vehicles for short-term or long-term periods based on their requirements.
+
+3. Cost Savings: Renting a car can be cost-effective for customers who only need a 
+    vehicle on occasion or for a short period.
+
+4. Convenience: Car rental companies typically offer pick-up and drop-off services 
+    at various locations, including airports, train stations, and local rental 
+    offices. This convenience makes it easy for customers to access transportation 
+    when and where they need it.
+
+5. Access to Specialized Vehicles: Car rental systems often provide access to 
+    specialized vehicles like vans, trucks, or luxury cars, which may not be practical 
+    for everyday ownership but are needed for specific tasks or events.
