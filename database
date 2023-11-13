@@ -1,15 +1,16 @@
 
+Registeration
+    -Register id (pk)(auto-increament)
+    -first name
+    -middle name
+    -last name
+    -mobile no.
+    -email id
+    -password
 
-Login Details
-    -Register 
-    -Email id
-    -Username
-    -Password
-    -Q&A for forget password
+Customer/owner detail / Create profile
 
-
-Customer detail
-    -Customer id(cid)(pk)
+    -user id(pk)
     -Driving license
     -first name
     -middle name
@@ -17,6 +18,11 @@ Customer detail
     -contact
     -email
     -customer address
+    -Aadhar no.
+    -Pan no.
+    -DOB
+    -Gender
+    -car id(null if it is a customer)
     
 Car detail
     -car id(pk)
@@ -25,6 +31,7 @@ Car detail
     -car category id(fk)
     -availibility
     -location id(fk)
+    -insurance
 
 Car category
     -car category id(pk)
@@ -35,6 +42,9 @@ Car category
     -fuel type
     -kms drove
     -transmission
+    -mileage
+    -car color
+    
 
 
 customer location
