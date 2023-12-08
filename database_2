@@ -1,0 +1,101 @@
+CREATE TABLE registration (
+    register_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255),
+    last_name VARCHAR(255) NOT NULL,
+    mobile_no VARCHAR(15) NOT NULL UNIQUE,
+    email_id VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    driving_license VARCHAR(20) NOT NULL UNIQUE,
+    first_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255),
+    last_name VARCHAR(255) NOT NULL,
+    contact VARCHAR(15) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    user_location_id VARCHAR(255) NOT NULL,
+    aadhar_no VARCHAR(12) NOT NULL UNIQUE,
+    pan_no VARCHAR(10) NOT NULL UNIQUE,
+    dob DATE,
+    gender VARCHAR(10),
+    car_id INT,
+    FOREIGN KEY (car_id) REFERENCES car_details(car_id),
+    FOREIGN KEY (user_location_id) REFERENCES user_location(user_location_id)
+);
+
+
+CREATE TABLE car_details (
+    car_id INT PRIMARY KEY AUTO_INCREMENT,
+    model_name VARCHAR(255) NOT NULL,
+    purchase_year INT NOT NULL,
+    availability BOOLEAN NOT NULL,
+    location_id INT NOT NULL,
+    no_of_seats INT NOT NULL,
+    luggage_capacity INT,
+    cost_per_hour DECIMAL(10, 2) NOT NULL,
+    late_fee_per_hour DECIMAL(10, 2),
+    fuel_type VARCHAR(50) NOT NULL,
+    kms_drove INT NOT NULL,
+    transmission VARCHAR(20) NOT NULL,
+    mileage DECIMAL(5, 2) NOT NULL,
+    car_color VARCHAR(50),
+    user_id INT NOT NULL,
+    insurance BOOLEAN,
+    description VARCHAR(1000) NOT NULL,
+    FOREIGN KEY (location_id) REFERENCES user_location(user_location_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+
+CREATE TABLE user_location (
+    user_location_id INT PRIMARY KEY AUTO_INCREMENT,
+    street VARCHAR(255) NOT NULL,
+    landmark VARCHAR(255),
+    city VARCHAR(100) NOT NULL,
+    state VARCHAR(100) NOT NULL,
+    zip_code VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE booking_details (
+    booking_id INT PRIMARY KEY AUTO_INCREMENT,
+    from_datetime DATETIME NOT NULL,
+    to_datetime DATETIME NOT NULL,
+    amount_per_hour DECIMAL(10, 2) NOT NULL,
+    status BOOLEAN,
+    discount DECIMAL(5, 2),
+    deposit DECIMAL(10, 2) NOT NULL,
+    pickup_drop_location_id INT NOT NULL,
+    car_id INT NOT NULL,
+    user_id INT NOT NULL,
+    FOREIGN KEY (pickup_drop_location_id) REFERENCES user_location(user_location_id),
+    FOREIGN KEY (car_id) REFERENCES car_details(car_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+
+CREATE TABLE billing_details (
+    bill_id INT PRIMARY KEY AUTO_INCREMENT,
+    booking_id INT,
+    bill_date DATE NOT NULL,
+    bill_status BOOLEAN,
+    discount_amount DECIMAL(10, 2),
+    total_late_fees DECIMAL(10, 2),
+    total_amount DECIMAL(10, 2) NOT NULL,
+    deposit DECIMAL(10, 2) NOT NULL,
+    user_id INT NOT NULL,
+    car_id INT NOT NULL,
+    FOREIGN KEY (booking_id) REFERENCES booking_details(booking_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (car_id) REFERENCES car_details(car_id)
+);
+
+
+alter table users modify user_location_id int; --- first apply this query
+
+alter table users add constraint foreign key(user_location_id) references user_location(user_location_id);
+
+alter table users add constraint foreign key(car_id) references car_details(car_id);
