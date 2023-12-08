@@ -16,14 +16,12 @@ CREATE TABLE users (
     last_name VARCHAR(255) NOT NULL,
     contact VARCHAR(15) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
-    user_location_id VARCHAR(255) NOT NULL,
+    user_location_id INT NOT NULL,
     aadhar_no VARCHAR(12) NOT NULL UNIQUE,
     pan_no VARCHAR(10) NOT NULL UNIQUE,
     dob DATE,
     gender VARCHAR(10),
-    car_id INT,
-    FOREIGN KEY (car_id) REFERENCES car_details(car_id),
-    FOREIGN KEY (user_location_id) REFERENCES user_location(user_location_id)
+    car_id INT
 );
 
 
@@ -94,7 +92,6 @@ CREATE TABLE billing_details (
 );
 
 
-alter table users modify user_location_id int; --- first apply this query
 
 alter table users add constraint foreign key(user_location_id) references user_location(user_location_id);
 
