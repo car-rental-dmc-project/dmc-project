@@ -1,0 +1,84 @@
+create database car_Rent;
+
+CREATE TABLE registration (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(20) NOT NULL,
+    middle_name VARCHAR(20),
+    last_name VARCHAR(20) NOT NULL,
+    mobile_no VARCHAR(20) NOT NULL,
+    email_id VARCHAR(30) UNIQUE NOT NULL,
+    password VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE user (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    middle_name VARCHAR(50),
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    contact VARCHAR(20) NOT NULL,
+    address VARCHAR(255),
+    dob DATE,
+    adhar_no VARCHAR(20),
+    pan_no VARCHAR(20),
+    gender VARCHAR(10),
+    car_id INT,
+    cust_location_id,
+    FOREIGN KEY (car_id) REFERENCES car(car_id),
+    FOREIGN KEY(cust_location_id) REFERENCES(cust_location_id);
+);
+ //Question in user table
+ 
+ 
+CREATE TABLE car_details (
+    car_id INT AUTO_INCREMENT PRIMARY KEY,
+    model_name VARCHAR(50) NOT NULL,
+    purchase_year INT NOT NULL,
+    availability BOOLEAN NOT NULL,
+    insurance VARCHAR(50),
+    insurance_id INT,
+    car_category_id INT,
+    location_id INT,
+    FOREIGN KEY (insurance_id) REFERENCES insurance(insurance_id),
+    FOREIGN KEY (car_category_id) REFERENCES car_category(car_category_id),
+    FOREIGN KEY (location_id) REFERENCES location(location_id)
+);
+          
+          
+ //Question   Car_location===owner_location
+ //cust/owner id added in custome_location tb as fk
+ //in cust/owner tb location id madetory? or we can set it through custo_loc tb
+ 
+ 
+ CREATE TABLE cust_location (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    street VARCHAR(255) NOT NULL,
+    landmark VARCHAR(100),
+    city VARCHAR(50) NOT NULL,
+    state VARCHAR(50) NOT NULL,
+    zip_code VARCHAR(10) NOT NULL
+);
+
+ CREATE TABLE booking_details (
+    booking_id INT PRIMARY KEY AUTO_INCREMENT,
+    car_id INT,
+    customer_id INT,
+    from_date DATE,
+    to_date DATE,
+    pickup_location INT,
+    drop_location INT,
+    amount_per_hr DECIMAL(10, 2),
+    status ENUM('booked', 'pending'),
+    deposit DECIMAL(10, 2),
+    insurance_id INT,
+    discount_id INT,
+   
+     
+    CONSTRAINT car FOREIGN KEY (car_id) REFERENCES details(car_id),
+    CONSTRAINT customer FOREIGN KEY (customer_id) REFERENCES customer_details(customer_id),
+    CONSTRAINT pickup_location FOREIGN KEY (pickup_location) REFERENCES location_details(location_id),
+    CONSTRAINT drop_location FOREIGN KEY (drop_location) REFERENCES location_details(location_id),
+    CONSTRAINT insurance FOREIGN KEY (insurance_id) REFERENCES insurance_details(insurance_id),
+    CONSTRAINT discount FOREIGN KEY (discount_id) REFERENCES discount_details(discount_id)
+);
+ //query not correct

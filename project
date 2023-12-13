@@ -9,10 +9,18 @@
 
 		use case diagram
 
-			-admin/owner (deleted)
+			-admin 
+				-login
+				-manage customers/owner database(view/udpate/delete/add)
+				-verify customers/owner details
+				-view booking history
+				-verify car details
+				-manage car details(view/udpate/delete/add)
+				-logout
+
 				
 				
-			-customers/users   (as well as for admin)
+			-customers/owner/users   (as well as for admin)
 
 				-register
 				-login
