@@ -96,3 +96,62 @@ CREATE TABLE billing_details (
 alter table users add constraint foreign key(user_location_id) references user_location(user_location_id);
 
 alter table users add constraint foreign key(car_id) references car_details(car_id);
+
+alter table car_details add iamge_path varchar(255);  --add image path column
+
+alter table registration add r1 varchar(255); --for extra column
+
+alter table registration add r2 varchar(255); --for extra column
+
+alter table registration add r3 varchar(255); --for extra column
+
+alter table registration add r4 varchar(255); --for extra column
+
+alter table registration add r5 varchar(255); --for extra column
+
+alter table user_location add ul1 varchar(255);
+
+alter table user_location add ul2 varchar(255);
+
+alter table user_location add ul3 varchar(255);
+
+alter table user_location add ul4 varchar(255);
+
+alter table user_location add ul5 varchar(255);
+
+alter table users add e1 varchar(255);
+
+alter table users add e2 varchar(255);
+
+alter table users add e3 varchar(255);
+
+alter table car_details add cd1 varchar(255);
+
+alter table car_details add cd2 varchar(255);
+
+alter table car_details add cd3 varchar(255);
+
+alter table car_details add cd4 varchar(255);
+
+alter table car_details add cd5 varchar(255);
+
+alter table booking_details add bd1 varchar(255);
+
+alter table booking_details add bd2 varchar(255);
+
+alter table booking_details add bd3 varchar(255);
+
+alter table booking_details add bd4 varchar(255);
+
+alter table booking_details add bd5 varchar(255);
+
+alter table billing_details add billd1 varchar(255);
+
+alter table billing_details add billd2 varchar(255);
+
+alter table billing_details add billd3 varchar(255);
+
+alter table billing_details add billd4 varchar(255);
+
+alter table billing_details add billd5 varchar(255);
+
