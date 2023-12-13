@@ -1,103 +1,87 @@
 
-Registeration
-    -Register id (pk)(auto-increament)
-    -first name
+Registration
+    -Register id                (PK)(auto-increament)
+    -first name                 (NOT NULL)
     -middle name
-    -last name
-    -mobile no.
-    -email id
-    -password
+    -last name                  (NOT NULL)
+    -mobile no.                 (NOT NULL)  (UNIQUE)
+    -email id                   (NOT NULL)  (UNIQUE)
+    -password                   (NOT NULL)  (UNIQUE)
+    -extra columns
 
 Customer/owner detail / Create profile
 
-    -user id(pk)
-    -Driving license
-    -first name
-    -middle name
-    -last name
-    -contact
-    -email
-    -customer address
-    -Aadhar no.
-    -Pan no.
-    -DOB
+    -user id                    (PK)
+    -Driving license            (NOT NULL)  (UNIQUE)
+    -first name                 (NOT NULL)
+    -middle name    
+    -last name                  (NOT NULL)
+    -contact                    (NOT NULL)  (UNIQUE)
+    -email                      (NOT NULL)  (UNIQUE)
+    -customer address           (NOT NULL)
+    -Aadhar no.                 (NOT NULL)  (UNIQUE)
+    -Pan no.                    (NOT NULL)  (UNIQUE)
+    -DOB    
     -Gender
-    -car id(null if it is a customer)
+    -car id(null if it is a customer)   (FK)
+    -extra columns
     
 Car detail
-    -car id(pk)
-    -model name
-    -purchase year
-    -car category id(fk)
-    -availibility
-    -location id(fk)
-    # -insurance
-
-Car category
-    -car category id(pk)
-    -no. of seats
-    -luggage capacity
-    -cost per hour
+    -car id                     (PK)
+    -model name                 (NOT NULL)
+    -purchase year              (NOT NULL)
+    -availibility               (NOT NULL)
+    -location id                (FK)    (NOT NULL)
+    -no. of seats               (NOT NULL)
+    -luggage capacity   
+    -cost per hour              (NOT NULL)
     -late fee per hour
-    -fuel type
-    -kms drove
-    -transmission
-    -mileage
-    -car color
-    
+    -fuel type                  (NOT NULL)
+    -kms drove                  (NOT NULL)
+    -transmission               (NOT NULL)
+    -mileage                    (NOT NULL)
+    -car color  
+    -user id                    (FK)    (NOT NULL)
+    -insurance                  (BOOLEAN)
+    -description                (NOT NULL)
+    -extra columns
 
 
-customer location
-    -customer location id(pk)
-    -street
-    -landmark
-    -city
-    -state
-    -zip code
-
-car location
-    -car location id(pk)
-    -street
-    -landmark
-    -city
-    -state
-    -zip code
+User location
+    -user location id           (PK)
+    -street                     (NOT NULL)
+    -landmark   
+    -city                       (NOT NULL)
+    -state                      (NOT NULL)
+    -zip code                   (NOT NULL)
+    -extra columns
     
 Booking details
     -booking id(pk)
-    -car id(fk)
-    -customer id(fk)
-    -from DD:HH (date, hour)
-    -to DD:HH (date, hour)
-    -pickup location(customer location id)(fk)
-    -drop location(customer location id)(fk)
-    -amount per hour
-    -status(booked/available)
-    -insurance id(fk)
-    -discount id(fk)
-    -deposit
+    -from DD:HH (date, hour)    (NOT null)
+    -to DD:HH (date, hour)      (NOT null)
+    -amount per hour            (NOT NULL)
+    -status(booked/available)   (BOOLEAN)
+    -discount (calculate)       
+    -deposit ?                  (NOT NULL)
+    -pickup/drop location (user location id)(FK)    (NOT NULL)
+    -car id(fk)                 (NOT NULL)
+    -customer id(fk)            (NOT NULL)
+    -extra columns
 
 Billing details
-    -bill id
-    -booking id
-    -bill date
-    -bill status(paid/pending)
-    -tax amount
-    -discount amount
+    -bill id  (PK)   
+    -booking id                 (FK)
+    -bill date                  (NOT NULL)
+    -bill status(paid/pending)  (BOOLEAN)
+    -discount amount            
     -total late fees
-    -total amount
-    -deposit
+    -total amount               (NOT NULL)
+    -deposit ?                  (NOT NULL)
+    -user_id                    (FK)    (NOT NULL)
+    -car_id                     (FK)    (NOT NULL)
+    -extra columns
 
-Discount details
-    -discount id
-    -discount name
-    -expiry date
-    -discount amount
 
-Insurance
-    -insurance id
-    -insurance type
-    -coverage type
-    
 
 
