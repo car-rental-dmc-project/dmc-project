@@ -24,6 +24,7 @@ Customer/owner detail / Create profile
     -DOB    
     -Gender
     -car id(null if it is a customer)   (FK)
+    -register id                    (FK)
     -extra columns
     
 Car detail
@@ -54,6 +55,7 @@ User location
     -city                       (NOT NULL)
     -state                      (NOT NULL)
     -zip code                   (NOT NULL)
+    -user id                    (FK)
     -extra columns
     
 Booking details
