@@ -1,0 +1,10 @@
+insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(1, "123", "Rahul", "Yashvardhan", "Raichand", "987654321", "rahul@gmail.com", "rahul", "123456789", "9513578426", "1989-06-15", "Male");
+
+insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(2, "456", "Rohan", "Yashvardhan", "Raichand", "987654333", "rohan@gmail.com", "rohan", "456123789", "9513118412", "1992-03-5", "Male");
+
+insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(3, "789", "Krish", "Rahul", "Raichand", "8957656589", "krish@gmail.com", "krish", "156746878", "7845692315", "2001-09-20", "Male");
+
+insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(4, "951", "Yashvardhan", "Harshvardhan", "Raichand", "777564321", "yashvardhan@gmail.com", "yashvardhan", "129856721", "9565278789", "1968-01-30", "Male");
+
+insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(5, "357", "Nandini", "Yashvardhan", "Raichand", "825654621", "nandini@gmail.com", "nandini", "368946789", "9863278412", "1971-04-25", "Female");
+
