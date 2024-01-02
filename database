@@ -20,6 +20,11 @@ Customer/owner detail / Create profile
     -Pan no.                    (NOT NULL)  (UNIQUE)
     -DOB    
     -Gender
+<<<<<<< HEAD
+=======
+    -car id(null if it is a customer)   (FK)
+    -register id                    (FK)
+>>>>>>> 19ff79644595547e29f85f6a73e64ba62943f5f3
     -extra columns
     
 Car detail
@@ -50,7 +55,11 @@ User location
     -city                       (NOT NULL)
     -state                      (NOT NULL)
     -zip code                   (NOT NULL)
+<<<<<<< HEAD
     -user id					(FK)
+=======
+    -user id                    (FK)
+>>>>>>> 19ff79644595547e29f85f6a73e64ba62943f5f3
     -extra columns
     
 Booking details
