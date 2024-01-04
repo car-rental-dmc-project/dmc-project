@@ -95,8 +95,18 @@ app.delete('/:car_id', (request, response) => {
 app.put('/:car_id', (request, response) => {
     
     var availability = request.body.availability;
+    var cost_per_hour = request.body.cost_per_hour;
+    var late_fee_per_hour = request.body.late_fee_per_hour;
+    var kms_driven = request.body.kms_driven;
+    var insurance = request.body.insurance;
 
-    var statement = `update car_details set availability = '${availability}' where car_id = ${request.params.car_id}`;
+    var statement = `update car_details set 
+                     availability = '${availability}',
+                     cost_per_hour = '${cost_per_hour}',
+                     late_fee_per_hour = '${late_fee_per_hour}',
+                     kms_driven = '${kms_driven}',
+                     insurance = '${insurance}'
+                     where car_id = '${request.params.car_id}`;
 
     var connection = mysql.createConnection(connectionDetails);
 

@@ -4,7 +4,6 @@ const express = require('express');
 const app = express.Router();
 
 
-
 const connectionDetails = {
                             host : config.get("server"),
                             database : config.get("database"),
@@ -13,7 +12,7 @@ const connectionDetails = {
                             }
 
 app.get('/', (request, response) => {
-    var statement = `select * from users`;
+    var statement = `select * from location`;
     var connection = mysql.createConnection(connectionDetails);
 
     connection.query(statement, (error, result) => {
@@ -33,18 +32,15 @@ app.get('/', (request, response) => {
 
 app.post('/', (request, response) => {
 
-    var first_name = request.body.first_name;
-    var middle_name = request.body.middle_name;
-    var last_name = request.body.last_name;
-    var contact = request.body.contact;
-    var email = request.body.email;
-    var password = request.body.password;
-    var dob = request.body.dob;
-    var gender = request.body.gender;
+    var street = request.body.street;
+    var landmark = request.body.landmark;
+    var city = request.body.city;
+    var state = request.body.state;
+    var zip_code = request.body.zip_code;
+    var user_id = request.body.user_id;
 
-
-    var statement = `Insert into users(first_name, middle_name, last_name, contact, email, password, dob, gender) 
-                        values('${first_name}','${middle_name}','${last_name}','${contact}','${email}','${password}','${dob}','${gender}')`;
+    var statement = `Insert into location(street, landmark, city, state, zip_code, user_id) 
+                        values('${street}','${landmark}','${city}','${state}','${zip_code}','${user_id}')`;
 
     var connection = mysql.createConnection(connectionDetails);
 
@@ -62,11 +58,11 @@ app.post('/', (request, response) => {
     });
 });
 
-app.delete('/:user_id', (request, response) => {
+app.delete('/:location_id', (request, response) => {
 
-    var user_id = request.params.user_id;
+    var location_id = request.params.location_id;
 
-    var statement = `delete from users where user_id=${user_id}`;
+    var statement = `delete from location where location_id=${location_id}`;
 
     var connection = mysql.createConnection(connectionDetails);
 
@@ -84,29 +80,24 @@ app.delete('/:user_id', (request, response) => {
     });
 });
 
-app.put('/:user_id', (request, response) => {
+app.put('/:location_id', (request, response) => {
 
-    var driving_license = request.body.driving_license;
-    var first_name = request.body.first_name;
-    var middle_name = request.body.middle_name;
-    var last_name = request.body.last_name;
-    var contact = request.body.contact;
-    var email = request.body.email;
-    var aadhar_no = request.body.aadhar_no;
-    var pan_no = request.body.pan_no;
-    var dob = request.body.dob;
+    var street = request.body.street;
+    var landmark = request.body.landmark;
+    var city = request.body.city;
+    var state = request.body.state;
+    var zip_code = request.body.zip_code;
+    var user_id = request.body.user_id;
 
 
-    var statement = `update users set 
-                     first_name = '${first_name}',
-                     middle_name = '${middle_name}',  
-                     last_name = '${last_name}', 
-                     contact = '${contact}', 
-                     email = '${email}', 
-                     aadhar_no = '${aadhar_no}', 
-                     pan_no = '${pan_no}', 
-                     dob = '${dob}' 
-                     WHERE user_id = ${request.params.user_id}`;
+    var statement = `update location set 
+                     street = '${street}',
+                     landmark = '${landmark}',  
+                     city = '${city}', 
+                     state = '${state}', 
+                     zip_code = '${zip_code}', 
+                     user_id = '${user_id}'
+                     WHERE location_id = ${request.params.location_id}`;
     var connection = mysql.createConnection(connectionDetails);
 
     connection.query(statement, (error, result) => {
