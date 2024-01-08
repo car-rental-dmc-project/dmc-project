@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_height="match_parent"
+    tools:context=".CarApp.activity.LoginActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/al_beancar"
+            android:src="@drawable/beancar"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            />
+
+        <TextView
+            android:id="@+id/al_rentocar"
+            android:layout_toRightOf="@+id/al_beancar"
+            android:text="Rent o'CAR"
+            android:textSize="50dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#D80F38"
+            android:textStyle="bold|italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/dotted_line"
+        />
+
+    <TextView
+        android:text="LOGIN "
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        />
+
+
+    <TextView
+            android:id="@+id/al_textemailid"
+            android:text="Email Id  :  "
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        />
+
+    <EditText
+            android:id="@+id/al_editemailid"
+            android:layout_marginTop="7dp"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:hint="enter email id here"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/al_textpassword"
+        android:text="Password  :  "
+        android:layout_gravity="center"
+        android:textSize="22dp"
+        android:layout_marginTop="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        android:id="@+id/al_editpassword"
+        android:layout_marginTop="7dp"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:hint="enter password here"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+
+    <CheckBox
+        android:id="@+id/al_checkboxrememberme"
+        android:text="Remember Me"
+        android:textSize="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/al_textforgotpassword"
+        android:text="Forgot Password ?"
+        android:textSize="17dp"
+        android:onClick="al_forgotpassword"
+        android:layout_toRightOf="@+id/al_checkboxrememberme"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#0B5F7F"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/al_btnlogin"
+        android:text="Login"
+        android:layout_gravity="center"
+        android:textSize="23dp"
+        android:onClick="al_login"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/al_textregisterhere"
+        android:text="Don't have an account? Register here"
+        android:textSize="23dp"
+        android:onClick="al_register"
+        android:layout_marginTop="17dp"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:textColor="#0B5F7F"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>

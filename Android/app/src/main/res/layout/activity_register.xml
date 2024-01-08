@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="match_parent"
+    tools:context=".CarApp.activity.RegisterActivity">
+
+    <TextView
+        android:text="Register "
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+    <TextView
+        android:id="@+id/ar_textfname"
+        android:text="First Name : "
+        android:textSize="19dp"
+        android:layout_marginTop="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        android:id="@+id/ar_editfname"
+        android:layout_marginTop="7dp"
+        android:textSize="19dp"
+        android:layout_toRightOf="@+id/ar_textfname"
+        android:hint="enter first name here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/ar_textmname"
+            android:text="Middle Name : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ar_editmname"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/ar_textmname"
+            android:hint="enter middle name here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/ar_textlname"
+            android:text="Last Name : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ar_editlname"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/ar_textlname"
+            android:hint="enter last name here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/ar_textphone"
+            android:text="Phone : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ar_editphone"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:inputType="number"
+            android:layout_toRightOf="@+id/ar_textphone"
+            android:hint="enter email id here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/ar_textemailid"
+            android:text="Email Id : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ar_editemailid"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/ar_textemailid"
+            android:hint="enter email id here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/ar_textpassword"
+            android:text="Password : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ar_editpassword"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/ar_textpassword"
+            android:hint="enter password here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/ar_textconfirmpassword"
+            android:text="Confirm Password : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ar_editconfirmpassword"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/ar_textconfirmpassword"
+            android:hint="c_password here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+
+    <Button
+        android:id="@+id/ar_btnregister"
+        android:layout_gravity="center"
+        android:text="Register"
+        android:textSize="19dp"
+        android:onClick="ar_register"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/ar_btncancel"
+        android:layout_gravity="center"
+        android:text="Cancel"
+        android:textSize="19dp"
+        android:onClick="ar_cancel"
+        android:layout_toRightOf="@+id/ar_btnregister"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    </RelativeLayout>
+
+</LinearLayout>

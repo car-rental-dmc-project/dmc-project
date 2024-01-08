@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".CarApp.activity.AddCarActivity">
+
+    <TextView
+        android:text="Add Car "
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/aac_textmodelname"
+            android:text="Model Name : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/aac_editmodelname"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/aac_textmodelname"
+            android:hint="enter model name here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/aac_textpurchaseyear"
+            android:text="Purchase Year : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/aac_editpurchaseyear"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/aac_textpurchaseyear"
+            android:hint="enter purchase year here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/aac_textcostperhour"
+            android:text="Cost per hour : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/aac_editcostperhour"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/aac_textcostperhour"
+            android:hint="enter cost per hour here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/aac_textfueltype"
+            android:text="Fuel Type : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/aac_editfueltype"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/aac_textfueltype"
+            android:hint="enter fuel type here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/aac_texttransmission"
+            android:text="Transmission : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/aac_edittransmission"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/aac_texttransmission"
+            android:hint="enter transmission here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/aac_textkmsdriven"
+            android:text="Kms Driven : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/aac_editkmsdriven"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/aac_textkmsdriven"
+            android:hint="enter kms driven here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/aac_textmileage"
+            android:text="Mileage : "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/aac_editmileage"
+            android:layout_marginTop="7dp"
+            android:textSize="19dp"
+            android:layout_toRightOf="@+id/aac_textmileage"
+            android:hint="enter mileage here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        >
+
+        <TextView
+            android:id="@+id/aac_textinsurance"
+            android:text="Insurance :    "
+            android:textSize="19dp"
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <RadioGroup
+            android:id="@+id/acc_radiogroup"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/aac_textinsurance"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            >
+
+            <RadioButton
+                android:id="@+id/acc_radiobtnyes"
+                android:text="Yes"
+                android:textSize="19dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <RadioButton
+                android:id="@+id/acc_radiobtnno"
+                android:text="No"
+                android:layout_marginLeft="30dp"
+                android:textSize="19dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:id="@+id/aac_btnadd"
+            android:layout_gravity="center"
+            android:text="Add"
+            android:textSize="19dp"
+            android:onClick="aac_add"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:id="@+id/aac_btncancel"
+            android:layout_gravity="center"
+            android:text="Cancel"
+            android:textSize="19dp"
+            android:onClick="aac_cancel"
+            android:layout_toRightOf="@+id/aac_btnadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
