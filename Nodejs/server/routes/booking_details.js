@@ -4,6 +4,10 @@ const express = require('express');
 const app = express.Router();
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca799fa8c480386b47c4dc81caa535019936259
 const connectionDetails = {
                             host : config.get("server"),
                             database : config.get("database"),
@@ -11,6 +15,7 @@ const connectionDetails = {
                             password : config.get("password")
                             }
 
+<<<<<<< HEAD
 app.get('/', (request, response) => {
     var statement = `select * from booking_details`;
     var connection = mysql.createConnection(connectionDetails);
@@ -49,6 +54,17 @@ app.post('/', (request, response) => {
     connection.query(statement, (error, result) => {
         if(error==null)
         {
+=======
+
+// join query to used to display location of car and customer
+// using car_id in booking_details and location_id in car_details
+app.get('/',(request, response) => {
+    var car_id = request.body.car_id;
+    var statement = `select * from booking_details where car_id = ${car_id}`;
+    var connection = mysql.createConnection(connectionDetails);
+    connection.query(statement,(error,result)=>{
+        if(error==null){
+>>>>>>> 3ca799fa8c480386b47c4dc81caa535019936259
             connection.end(); 
             response.send(result);
         }
@@ -62,7 +78,11 @@ app.post('/', (request, response) => {
 
 app.delete('/:booking_id', (request, response) => {
 
+<<<<<<< HEAD
     var location_id = request.params.location_id;
+=======
+    var booking_id = request.params.booking_id;
+>>>>>>> 3ca799fa8c480386b47c4dc81caa535019936259
 
     var statement = `delete from booking_details where booking_id=${booking_id}`;
 
@@ -82,6 +102,7 @@ app.delete('/:booking_id', (request, response) => {
     });
 });
 
+<<<<<<< HEAD
 app.put('/:booking_id', (request, response) => {
 
     var from_datetime = request.body.from_datetime;
@@ -96,6 +117,20 @@ app.put('/:booking_id', (request, response) => {
                      zip_code = '${zip_code}', 
                      user_id = '${user_id}'
                      WHERE location_id = ${request.params.location_id}`;
+=======
+app.post('/', (request, response) => {
+
+    var from = request.body.from_datetime;
+    var to = request.body.to_datetime;
+    var amount_per_hour = request.body.amount_per_hour;
+    var status = request.body.status;
+    var discount = request.body.discount;
+    var deposit = request.body.deposit;
+    var car_id = request.body.car_id;
+
+    var statement = `insert into booking_details(from_datetime,to_datetime,amount_per_hour,status,discount,deposit,car_id) values('${from}','${to}',${amount_per_hour},${status},${discount},${deposit},${car_id})`;
+
+>>>>>>> 3ca799fa8c480386b47c4dc81caa535019936259
     var connection = mysql.createConnection(connectionDetails);
 
     connection.query(statement, (error, result) => {
@@ -111,5 +146,8 @@ app.put('/:booking_id', (request, response) => {
         }
     });
 });
+<<<<<<< HEAD
 
 module.exports = app;
+=======
+>>>>>>> 3ca799fa8c480386b47c4dc81caa535019936259
