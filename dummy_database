@@ -1,27 +1,30 @@
 CREATE TABLE users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
-    driving_license VARCHAR(20) NOT NULL UNIQUE,
+    driving_license VARCHAR(20) UNIQUE,
     first_name VARCHAR(255) NOT NULL,
     middle_name VARCHAR(255),
     last_name VARCHAR(255) NOT NULL,
     contact VARCHAR(15) NOT NULL UNIQUE,
     email VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(50) NOT NULL,
-    aadhar_no VARCHAR(12) NOT NULL UNIQUE,
-    pan_no VARCHAR(10) NOT NULL UNIQUE,
+    aadhar_no VARCHAR(12) UNIQUE,
+    pan_no VARCHAR(10) UNIQUE,
     dob DATE,
-    gender VARCHAR(10)
+    gender VARCHAR(10),
+    role VARCHAR(50) NOT NULL DEFAULT 'user',
+    status BOOLEAN
 );
 
-insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(1, "123", "Rahul", "Yashvardhan", "Raichand", "987654321", "rahul@gmail.com", "rahul", "123456789", "9513578426", "1989-06-15", "Male");
 
-insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(2, "456", "Rohan", "Yashvardhan", "Raichand", "987654333", "rohan@gmail.com", "rohan", "456123789", "9513118412", "1992-03-5", "Male");
+insert into users(driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender, status) values("123", "Rahul", "Yashvardhan", "Raichand", "987654321", "rahul@gmail.com", "rahul", "123456789", "9513578426", '1989-06-15', "Male", true);
 
-insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(3, "789", "Krish", "Rahul", "Raichand", "8957656589", "krish@gmail.com", "krish", "156746878", "7845692315", "2001-09-20", "Male");
+insert into users(driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender, status) values("456", "Rohan", "Yashvardhan", "Raichand", "987654333", "rohan@gmail.com", "rohan", "456123789", "9513118412", '1992-03-5', "Male", true);
 
-insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(4, "951", "Yashvardhan", "Harshvardhan", "Raichand", "777564321", "yashvardhan@gmail.com", "yashvardhan", "129856721", "9565278789", "1968-01-30", "Male");
+insert into users(driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender, status) values("789", "Krish", "Rahul", "Raichand", "8957656589", "krish@gmail.com", "krish", "156746878", "7845692315", '2001-09-20', "Male", false);
 
-insert into users(user_id, driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) values(5, "357", "Nandini", "Yashvardhan", "Raichand", "825654621", "nandini@gmail.com", "nandini", "368946789", "9863278412", "1971-04-25", "Female");
+insert into users(driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender, status) values("951", "Yashvardhan", "Harshvardhan", "Raichand", "777564321", "yashvardhan@gmail.com", "yashvardhan", "129856721", "9565278789", '1968-01-30', "Male", true);
+
+insert into users(driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender, status) values("357", "Nandini", "Yashvardhan", "Raichand", "825654621", "nandini@gmail.com", "nandini", "368946789", "9863278412", '1971-04-25', "Female", false);
 
 
 =====================================================================================
@@ -100,11 +103,11 @@ CREATE TABLE booking_details (
 
 
 insert into booking_details(from_datetime,to_datetime,amount_per_hour,status,discount,
-deposit,car_id) values ("2024-01-15 10:00:00","2024-01-17 18:00:00", 25.00, true, 5.00, 150.00, 1);
+deposit,car_id) values ("2024-01-15 10:00:00","2024-01-17 18:00:00", 25.00, true, 5.00, 150.00, 5);
 
 insert into booking_details(from_datetime,to_datetime,amount_per_hour,status,discount,
 deposit,car_id) values ("2024-02-20 12:00:00", "2024-02-25 15:00:00", 30.00, false,
-NULL, 200.00, 2);
+NULL, 200.00, 7);
 
 =====================================================================================
 CREATE TABLE billing_details (
@@ -120,7 +123,7 @@ CREATE TABLE billing_details (
 );
 
 
-insert into billing_details (booking_id,bill_date,bill_status,discount_amount,   total_late_fees,total_amount,deposit) values (1,"2024-01-18", true,10.00, 5.00, 200.00, 150.00);
+insert into billing_details (booking_id, bill_date, bill_status, discount_amount, total_late_fees, total_amount, deposit) values (4,"2024-01-18", true,10.00, 5.00, 200.00, 150.00);
 
 =====================================================================================
 
