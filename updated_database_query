@@ -1,0 +1,177 @@
+
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    driving_license VARCHAR(20) UNIQUE,
+    first_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255),
+    last_name VARCHAR(255) NOT NULL,
+    contact VARCHAR(15) NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(50) NOT NULL,
+    aadhar_no VARCHAR(12) UNIQUE,
+    pan_no VARCHAR(10) UNIQUE,
+    dob DATE,
+    gender VARCHAR(10),
+    role VARCHAR(50) NOT NULL DEFAULT 'user',
+    status BOOLEAN
+);
+
+
+CREATE TABLE location (
+    location_id INT PRIMARY KEY AUTO_INCREMENT,
+    street VARCHAR(255) NOT NULL,
+    landmark VARCHAR(255),
+    city VARCHAR(100) NOT NULL,
+    state VARCHAR(100) NOT NULL,
+    zip_code VARCHAR(20) NOT NULL,
+    user_id int,
+    foreign key(user_id) references users(user_id) on update cascade
+);
+
+CREATE TABLE car_details (
+    car_id INT PRIMARY KEY AUTO_INCREMENT,
+    model_name VARCHAR(255) NOT NULL,
+    purchase_year INT NOT NULL,
+    availability BOOLEAN NOT NULL,
+    location_id INT NOT NULL,
+    no_of_seats INT NOT NULL,
+    luggage_capacity INT,
+    cost_per_hour DECIMAL(10, 2) NOT NULL,
+    late_fee_per_hour DECIMAL(10, 2),
+    fuel_type VARCHAR(50) NOT NULL,
+    kms_driven INT NOT NULL,
+    transmission VARCHAR(20) NOT NULL,
+    mileage DECIMAL(5, 2) NOT NULL,
+    car_color VARCHAR(50),
+    user_id INT NOT NULL,
+    insurance BOOLEAN,
+    description VARCHAR(1000) NOT NULL,
+    foreign key(location_id) references location(location_id) on update cascade,
+    foreign key(user_id) references users(user_id) on update cascade
+);
+
+
+
+CREATE TABLE booking_details (
+    booking_id INT PRIMARY KEY AUTO_INCREMENT,
+    from_datetime DATETIME NOT NULL,
+    to_datetime DATETIME NOT NULL,
+    amount_per_hour DECIMAL(10, 2) NOT NULL,
+    status BOOLEAN,
+    discount DECIMAL(5, 2),
+    deposit DECIMAL(10, 2) NOT NULL,
+    car_id INT NOT NULL,
+    foreign key(car_id) references car_details(car_id)
+);
+
+
+ALTER TABLE booking_details
+ADD COLUMN user_id INT NOT NULL,
+ADD CONSTRAINT fk_user_id
+    FOREIGN KEY (user_id)
+    REFERENCES users(user_id)
+    ON UPDATE CASCADE;
+
+
+CREATE TABLE billing_details (
+    bill_id INT PRIMARY KEY AUTO_INCREMENT,
+    booking_id INT,
+    bill_date DATE NOT NULL,
+    bill_status BOOLEAN,
+    discount_amount DECIMAL(10, 2),
+    total_late_fees DECIMAL(10, 2),
+    total_amount DECIMAL(10, 2) NOT NULL,
+    deposit DECIMAL(10, 2),
+    foreign key(booking_id) references booking_details(booking_id) on update cascade
+);
+
+
+
+
+extra tables for urgency ==============================================================
+
+
+create table login(
+	login_id int primary key auto_increment,
+	email varchar(30),
+	password varchar(30),
+	user_id int,
+	role varchar(10),
+	status boolean
+);
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+JOINS
+
+BOOKING_DETAILS :
+
+select bd.booking_id, bd.from_datetime, bd.to_datetime, bd.amount_per_hour, bd.status, bd.discount, bd.deposit, cd.model_name as car_model, cd.cost_per_hour as car_cost_per_hour from booking_details bd join car_details cd on bd.car_id = cd.car_id; 
+
+
+CAR_DETAILS:
+
+select cd.model_name, cd.cost_per_hour, cd.transmission, cd.no_of_seats, cd.availability, l.city from car_details cd join location l on cd.location_id = l.location_id;
+
+
+
+CAR_DETAILS ----- LOCATION :
+
+
+select car_details.model_name, car_details.purchase_year, car_details.cost_per_hour, car_details.no_of_seats, car_details.availability from car_details join location on car_details.location_id =
+location.location_id where location.city = 'Mumbai';
+
+
+
+BOOKED CAR ----- USER_ID :
+
+select booking_details.* from booking_details left join car_details on booking_details.car_id = car_details.car_id where booking_details.user_id = 4;
+
+
+
+BOOKED CAR ----- LOCATION :
+
+select users.user_id, booking_details.from_datetime, booking_details.to_datetime, booking_details.car_id from booking_details join car_details on booking_details.car_id = car_details.car_id join  location on car_details.location_id = location.location_id join users on booking_details.user_id = users.user_id where location.city = 'Mumbai';
+
+
+
+===================================================================
+
+ADMIN CRUDS
+
+===================================================================
+
+REVENUE STATISTICS 
+
+===================================================================
+
+
+
+
+ 
+
+
+
+
+
+
+==================================================================
+
+QUERY USED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

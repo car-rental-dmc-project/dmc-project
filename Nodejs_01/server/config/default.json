@@ -1,7 +1,0 @@
-{
-    "server":"localhost",
-    "database":"rough1" ,
-    "user":"root",
-    "password":"manager",
-    "port":2222
-}
