@@ -85,5 +85,7 @@ CREATE TABLE billing_details (
     foreign key(booking_id) references booking_details(booking_id) on update cascade
 );
 
+
+Booking_details : 
 select b.from_datetime,b.to_datetime,b.amount_per_hour,b.status,b.discount,b.deposit,c.model_name,l.street,l.landmark from booking_details b join car_details c on b.car_id = c.car_id join location l on c.location_id = l.location_id;
 

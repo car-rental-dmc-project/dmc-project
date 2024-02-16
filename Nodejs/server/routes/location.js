@@ -14,20 +14,20 @@ const connectionDetails = {
 app.get('/', (request, response) => {
     var statement = `select * from location`;
     var connection = mysql.createConnection(connectionDetails);
-
+                            
     connection.query(statement, (error, result) => {
         if(error==null)
-        {
-            connection.end(); 
-            response.send(result);
-        }
+            {
+                connection.end(); 
+                response.send(result);
+            }
         else
-        {
-            connection.end();
-            response.send(error);
-        }
+            {
+                connection.end();
+                response.send(error);
+            }
+        });
     });
-});
 
 
 app.post('/', (request, response) => {

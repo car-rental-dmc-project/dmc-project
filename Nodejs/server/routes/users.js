@@ -10,7 +10,7 @@ const connectionDetails = {
                             database : config.get("database"),
                             user : config.get("user"),
                             password : config.get("password")
-                            }
+                          }
 
 app.get('/', (request, response) => {
     var statement = `select * from users`;
@@ -33,6 +33,7 @@ app.get('/', (request, response) => {
 
 app.post('/', (request, response) => {
 
+    var driving_license = request.body.driving_license;
     var first_name = request.body.first_name;
     var middle_name = request.body.middle_name;
     var last_name = request.body.last_name;
@@ -41,10 +42,12 @@ app.post('/', (request, response) => {
     var password = request.body.password;
     var dob = request.body.dob;
     var gender = request.body.gender;
+    var aadhar_no = request.body.aadhar_no;
+    var pan_no = request.body.pan_no;
 
 
-    var statement = `Insert into users(first_name, middle_name, last_name, contact, email, password, dob, gender) 
-                        values('${first_name}','${middle_name}','${last_name}','${contact}','${email}','${password}','${dob}','${gender}')`;
+    var statement = `Insert into users(driving_license, first_name, middle_name, last_name, contact, email, password, aadhar_no, pan_no, dob, gender) 
+                        values('${driving_license}','${first_name}','${middle_name}','${last_name}','${contact}','${email}','${password}','${aadhar_no}','${pan_no}','${dob}','${gender}')`;
 
     var connection = mysql.createConnection(connectionDetails);
 
@@ -86,27 +89,17 @@ app.delete('/:user_id', (request, response) => {
 
 app.put('/:user_id', (request, response) => {
 
-    var driving_license = request.body.driving_license;
-    var first_name = request.body.first_name;
-    var middle_name = request.body.middle_name;
-    var last_name = request.body.last_name;
     var contact = request.body.contact;
     var email = request.body.email;
-    var aadhar_no = request.body.aadhar_no;
-    var pan_no = request.body.pan_no;
-    var dob = request.body.dob;
+    var password = request.body.password;
 
 
     var statement = `update users set 
-                     first_name = '${first_name}',
-                     middle_name = '${middle_name}',  
-                     last_name = '${last_name}', 
                      contact = '${contact}', 
                      email = '${email}', 
-                     aadhar_no = '${aadhar_no}', 
-                     pan_no = '${pan_no}', 
-                     dob = '${dob}' 
+                     password = '${password}'
                      WHERE user_id = ${request.params.user_id}`;
+                     
     var connection = mysql.createConnection(connectionDetails);
 
     connection.query(statement, (error, result) => {

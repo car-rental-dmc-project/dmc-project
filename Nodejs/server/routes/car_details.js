@@ -72,9 +72,9 @@ app.post('/', (request, response) => {
 
 app.delete('/:car_id', (request, response) => {
 
-    var user_id = request.params.user_id;
+    var car_id = request.params.car_id;
 
-    var statement = `delete from car_details where car_id=${car_id}`;
+    var statement = `delete from car_details where car_id='${car_id}'`;
 
     var connection = mysql.createConnection(connectionDetails);
 
@@ -98,15 +98,19 @@ app.put('/:car_id', (request, response) => {
     var cost_per_hour = request.body.cost_per_hour;
     var late_fee_per_hour = request.body.late_fee_per_hour;
     var kms_driven = request.body.kms_driven;
+    var car_color = request.body.car_color;
     var insurance = request.body.insurance;
+    var description = request.body.description;
 
     var statement = `update car_details set 
                      availability = '${availability}',
                      cost_per_hour = '${cost_per_hour}',
                      late_fee_per_hour = '${late_fee_per_hour}',
                      kms_driven = '${kms_driven}',
-                     insurance = '${insurance}'
-                     where car_id = '${request.params.car_id}`;
+                     car_color = '${car_color}',
+                     insurance = '${insurance}',
+                     description = '${description}'
+                     where car_id = '${request.params.car_id}'`;
 
     var connection = mysql.createConnection(connectionDetails);
 

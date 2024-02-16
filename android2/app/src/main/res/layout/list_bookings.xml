@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bookingView"
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_alignParentLeft="true"
+                android:layout_width="140dp"
+                android:layout_height="80dp"
+                android:id="@+id/imgBooking"
+                android:src="@drawable/car3"/>
+
+            <TextView
+                android:layout_marginLeft="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imgBooking"
+                android:textSize="15dp"
+                android:text="Car Model"
+                android:textStyle="bold"
+                android:id="@+id/carName"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/year"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/carName"
+                android:text=" Year"/>
+
+            <TextView
+                android:layout_marginLeft="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/from"
+                android:text="From"
+                android:textStyle="bold"
+                android:layout_below="@+id/carName"
+                android:layout_toRightOf="@id/imgBooking"/>
+
+            <TextView
+                android:layout_marginLeft="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/to"
+                android:text="To"
+                android:textStyle="bold"
+                android:layout_below="@+id/from"
+                android:layout_toRightOf="@id/imgBooking"/>
+
+            <TextView
+                android:layout_marginLeft="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/totalAmount"
+                android:text="Total Amount"
+                android:textStyle="bold"
+                android:layout_below="@+id/to"
+                android:layout_toRightOf="@id/imgBooking"/>
+
+            <Button
+                android:textSize="14dp"
+                android:onClick="details"
+                android:backgroundTint="#86069C"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="View"
+                android:layout_centerVertical="true"
+                android:id="@+id/btnView"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

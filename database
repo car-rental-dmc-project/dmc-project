@@ -1,11 +1,15 @@
     
-Login
-	-login id					(PK)
-	-email 
-	-password
-	-userid						(FK)
-	-role(user/admin)
-	-status
+    
+Registration
+    -Register id                (PK)(auto-increament)
+    -first name                 (NOT NULL)
+    -middle name
+    -last name                  (NOT NULL)
+    -mobile no.                 (NOT NULL)  (UNIQUE)
+    -email id                   (NOT NULL)  (UNIQUE)
+    -password                   (NOT NULL)  (UNIQUE)
+    -role(user/admin)			(DEFAULT USER)
+    -extra columns    
 
 Customer/owner detail / Create profile
     -user id                    (PK)
@@ -87,15 +91,14 @@ Billing details
 
 
 
+Login
+	-login id					(PK)
+	-email 
+	-password
+	-userid						(FK)
+	-role(user/admin)
+	-status
+ 
 
 
 
-Registration
-    -Register id                (PK)(auto-increament)
-    -first name                 (NOT NULL)
-    -middle name
-    -last name                  (NOT NULL)
-    -mobile no.                 (NOT NULL)  (UNIQUE)
-    -email id                   (NOT NULL)  (UNIQUE)
-    -password                   (NOT NULL)  (UNIQUE)
-    -extra columns
