@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/graylight"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+
+
+        <LinearLayout
+            android:background="@drawable/baseline_email_24"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+
+
+            <ImageView
+                android:layout_marginTop="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/img"
+                />
+            <EditText
+                android:id="@+id/Nameprofile"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Your Name here"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="21sp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="370dp"
+
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shadow_bg"
+        android:layout_marginTop="45dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="First Name:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/firstName"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="First Name"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Middle Name:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/middleName"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Middle Name"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="96dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Last Name:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/lastName"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Last Name"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Email:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Email"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Contact:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/contact"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Contact"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="96dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Gender:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/gender"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Gender"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Aadhar No:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/aadharNo"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Aadhar No"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="94dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="PAN No:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/panNo"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Pan No"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Date of Birth:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/dateOfBirth"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Date Of Birth"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Role:-"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/role"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:hint="Role"
+                android:paddingLeft="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

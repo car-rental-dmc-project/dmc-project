@@ -1,7 +1,7 @@
 {
     "server":"localhost",
-    "database":"rough" ,
-    "user":"root",
-    "password":"manager",
+    "database":"carRental" ,
+    "user":"W2_80465_Pratik",
+    "password":"1511",
     "port":2222
 }
