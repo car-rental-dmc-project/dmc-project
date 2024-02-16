@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.sunbeam.app1.R;
 import com.sunbeam.app1.adapter.FragmentAdapter;
+import com.sunbeam.app1.utility.CarRentalConstants;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,7 +68,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.logout){
-            Toast.makeText(this,"Logout Selected",Toast.LENGTH_LONG).show();
+            getSharedPreferences(CarRentalConstants.SHARED_PREFERENCE_FILE_NAME,MODE_PRIVATE)
+                    .edit()
+                    .putBoolean(CarRentalConstants.LOGIN_STATUS,false)
+                    .apply();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
         } else if (item.getItemId() == R.id.needHelp) {
             Toast.makeText(this,"Need Help Selected",Toast.LENGTH_LONG).show();
         } else if (item.getItemId() == R.id.contactUs) {

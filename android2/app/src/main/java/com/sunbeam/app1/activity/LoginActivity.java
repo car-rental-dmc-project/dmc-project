@@ -23,6 +23,7 @@ import com.sunbeam.app1.api.RetrofitClient;
 import com.sunbeam.app1.entity.Users;
 import com.sunbeam.app1.utility.CarRentalConstants;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -51,8 +52,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view){
-        Log.e("LoginActivity",email.getEditText().getText().toString());
-        Log.e("LoginActivity",password.getEditText().getText().toString());
         Users user = new Users();
         user.setEmail(email.getEditText().getText().toString());
         user.setPassword(password.getEditText().getText().toString());
@@ -66,23 +65,22 @@ public class LoginActivity extends AppCompatActivity {
         RetrofitClient.getInstance().getApi().loginUser(user).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                Log.e("LoginActivity",response.body().getAsString());
-                if (response.body().get("status").getAsString().equals("success")){
-                    JsonArray array = response.body().get("data").getAsJsonArray();
-                    Log.e("LoginActivity",array.getAsString());
-                    if (array.size() != 0){
-                        Log.e("LoginActivity",array.get(0).getAsJsonObject().getAsString());
-                        int id = array.get(0).getAsJsonObject().get("user_id").getAsInt();
-                        getSharedPreferences(CarRentalConstants.SHARED_PREFERENCE_FILE_NAME,MODE_PRIVATE)
-                                .edit()
-                                .putInt(CarRentalConstants.USER_ID,id)
-                                .apply();
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
-                    }
-                    else {
-                        Toast.makeText(LoginActivity.this,"Invalid Email and Password",Toast.LENGTH_SHORT).show();
-                    }
+                JsonObject responseBody = response.body();
+//                Log.e("LoginActivity",responseBody.toString()+" akshat");
+//                Log.e("LoginActivity",responseBody.get("id").getAsInt()+"");
+                if (responseBody.size() != 0) {
+                    int id = responseBody.get("id").getAsInt();
+                    int token = responseBody.get("token").getAsInt();
+                    getSharedPreferences(CarRentalConstants.SHARED_PREFERENCE_FILE_NAME, MODE_PRIVATE)
+                            .edit()
+                            .putInt(CarRentalConstants.USER_ID, id)
+                            .putInt(CarRentalConstants.TOKEN,token)
+                            .apply();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
+                }
+                else {
+                    Toast.makeText(LoginActivity.this,"Invalid Email and Password",Toast.LENGTH_SHORT).show();
                 }
             }
 

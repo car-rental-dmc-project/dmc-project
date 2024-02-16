@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -150,12 +151,15 @@ public class RegisterActivity extends AppCompatActivity {
         RetrofitClient.getInstance().getApi().registerUser(users).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                if (response.body().get("status").getAsString().equals("success"))
-                    finishAfterTransition();
-                else {
-                    if (response.body().get("error").getAsJsonObject().get("errno").getAsInt() == 1062){
-                        Toast.makeText(RegisterActivity.this, "Something went wrong while registration", Toast.LENGTH_SHORT).show();
-                    }
+                JsonObject jsonObject = response.body();
+                Log.e("Register",jsonObject.toString());
+                Log.e("Register",jsonObject.get("errno").getAsInt()+"");
+                if (jsonObject.get("affectedRows").getAsInt() == 1) {
+                    finish();
+                }
+                //{"code":"ER_DUP_ENTRY","errno":1062,"sqlMessage":"Duplicate entry '9876543210' for key 'users.contact'","sqlState":"23000","index":0,"sql":"Insert into users(first_name, middle_name, last_name, contact, email, password) \n
+                else if (jsonObject.get("errno").getAsInt() == 1062){
+                        Toast.makeText(RegisterActivity.this, "Email is already registered", Toast.LENGTH_LONG).show();
                 }
             }
 
